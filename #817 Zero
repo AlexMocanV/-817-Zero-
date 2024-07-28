@@ -1,0 +1,30 @@
+#include <stack>
+void zero(int n,int a[])
+{
+    std::stack<int>impare;
+    std::stack<int>pare;
+    for(int i=1;i<=2*n;i++)
+    {
+        if(a[i]%2==0)
+        {
+            pare.push(a[i]);
+        }
+        else
+        {
+            impare.push(a[i]);
+        }
+    }
+    for(int i=1;i<=2*n;i++)
+    {
+        if(i%2==0)
+        {
+            a[i]=pare.top();
+            pare.pop();
+        }
+        else
+        {
+            a[i]=impare.top();
+            impare.pop();
+        }
+    }
+}
